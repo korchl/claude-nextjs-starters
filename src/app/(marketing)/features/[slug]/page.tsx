@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import { ResponsiveDemo } from "@/components/demos/responsive-demo"
 
 // 동적 라우트 기능 예제 매핑
 const featureExamples = {
@@ -119,21 +120,7 @@ const ExampleComponents: Record<string, React.ReactNode> = {
       ))}
     </div>
   ),
-  "responsive-demo": (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {[1, 2, 3, 4, 5, 6].map((i) => (
-        <div
-          key={i}
-          className="rounded-lg border border-border bg-card p-4 text-center"
-        >
-          <div className="mb-2 text-2xl font-bold text-primary">{i}</div>
-          <p className="text-sm text-muted-foreground">
-            모든 화면에서 완벽하게 동작합니다
-          </p>
-        </div>
-      ))}
-    </div>
-  ),
+  "responsive-demo": <ResponsiveDemo />,
   "typescript-demo": (
     <div className="space-y-3 font-mono text-sm">
       <p className="text-blue-600 dark:text-blue-400">
