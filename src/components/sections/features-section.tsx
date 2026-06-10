@@ -7,6 +7,7 @@ import {
   Code,
   BarChart,
   Smile,
+  Layers,
   LucideIcon,
 } from "lucide-react"
 
@@ -27,8 +28,9 @@ const iconMap: Record<string, LucideIcon> = {
   Palette,
   Layout,
   Code,
-  BarChart: BarChart,
+  BarChart,
   Smile,
+  Layers,
 }
 
 // 기능 카드 그리드 섹션
