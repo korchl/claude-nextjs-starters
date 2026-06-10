@@ -135,7 +135,7 @@ export function ResponsiveDemo() {
               </div>
             )}
 
-            {/* 햄버거 메뉴 — mobile만 표시 (md:hidden) */}
+            {/* 메뉴 — mobile만 표시 (md:hidden) */}
             {current === "mobile" && (
               <Button variant="ghost" size="icon" className="size-8">
                 <Menu className="size-4" />
