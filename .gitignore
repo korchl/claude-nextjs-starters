@@ -39,40 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-.playwright-mcp/console-2026-06-10T09-37-09-312Z.log
-.playwright-mcp/console-2026-06-10T09-37-23-872Z.log
-.playwright-mcp/console-2026-06-10T09-37-35-888Z.log
-.playwright-mcp/console-2026-06-10T09-38-13-231Z.log
-.playwright-mcp/console-2026-06-10T09-38-38-007Z.log
-.playwright-mcp/console-2026-06-10T09-39-22-627Z.log
-.playwright-mcp/console-2026-06-10T09-40-43-749Z.log
-.playwright-mcp/console-2026-06-10T09-41-19-064Z.log
-.playwright-mcp/console-2026-06-10T09-46-13-387Z.log
-.playwright-mcp/console-2026-06-10T09-46-25-108Z.log
-.playwright-mcp/console-2026-06-10T10-01-33-133Z.log
-.playwright-mcp/page-2026-06-10T09-37-10-073Z.yml
-.playwright-mcp/page-2026-06-10T09-37-24-571Z.yml
-.playwright-mcp/page-2026-06-10T09-37-27-914Z.png
-.playwright-mcp/page-2026-06-10T09-37-36-131Z.yml
-.playwright-mcp/page-2026-06-10T09-37-40-389Z.png
-.playwright-mcp/page-2026-06-10T09-38-13-525Z.yml
-.playwright-mcp/page-2026-06-10T09-38-16-849Z.png
-.playwright-mcp/page-2026-06-10T09-38-38-258Z.yml
-.playwright-mcp/page-2026-06-10T09-38-42-755Z.png
-.playwright-mcp/page-2026-06-10T09-39-22-931Z.yml
-.playwright-mcp/page-2026-06-10T09-39-26-576Z.png
-.playwright-mcp/page-2026-06-10T09-40-43-997Z.yml
-.playwright-mcp/page-2026-06-10T09-40-48-359Z.png
-.playwright-mcp/page-2026-06-10T09-41-19-298Z.yml
-.playwright-mcp/page-2026-06-10T09-46-14-055Z.yml
-.playwright-mcp/page-2026-06-10T09-46-17-477Z.png
-.playwright-mcp/page-2026-06-10T09-46-25-318Z.yml
-.playwright-mcp/page-2026-06-10T09-46-29-156Z.png
-.playwright-mcp/page-2026-06-10T10-01-33-428Z.yml
-.playwright-mcp/page-2026-06-10T10-01-40-721Z.png
-.playwright-mcp/page-2026-06-10T10-02-07-856Z.yml
-.playwright-mcp/page-2026-06-10T10-02-11-010Z.png
-.playwright-mcp/page-2026-06-10T10-02-19-941Z.yml
-.playwright-mcp/page-2026-06-10T10-02-24-148Z.png
-.gitignore
-.gitignore
+
+# playwright mcp
+.playwright-mcp/
+
+# claude local settings
+.claude/settings.local.json
