@@ -7,6 +7,7 @@ export const siteConfig = {
   // 네비게이션
   nav: [
     { label: "홈", href: "/" },
+    { label: "예제", href: "/features" },
     { label: "대시보드", href: "/dashboard" },
   ],
 
