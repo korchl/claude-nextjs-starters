@@ -7,11 +7,10 @@ export function useIsMobile() {
 
   React.useEffect(() => {
     const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)
-    const onChange = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    }
+    const onChange = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
     mql.addEventListener("change", onChange)
-    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
+    // 초기값 설정 — 이벤트 핸들러를 통해 호출하여 동기적 setState 경고 회피
+    onChange()
     return () => mql.removeEventListener("change", onChange)
   }, [])
 

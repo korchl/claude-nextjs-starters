@@ -1,7 +1,7 @@
 // 사이트 전체 상수 설정 — 단일 수정 지점
 export const siteConfig = {
   name: "ModernStarter",
-  description: "Next.js 15 + Tailwind CSS + ShadcnUI 기반 모던 웹 스타터킷",
+  description: "Next.js 16 + Tailwind CSS + ShadcnUI 기반 모던 웹 스타터킷",
   url: "https://example.com",
 
   // 네비게이션
@@ -26,7 +26,7 @@ export const siteConfig = {
     badge: "✨ 새로운 스타터킷",
     title: "최신 웹 개발 스택으로 빠르게 시작하세요",
     description:
-      "Next.js 15, React 19, Tailwind CSS v4, ShadcnUI를 활용한 프로덕션 레디 스타터킷입니다.",
+      "Next.js 16, React 19, Tailwind CSS v4, ShadcnUI를 활용한 프로덕션 레디 스타터킷입니다.",
     ctaPrimary: { label: "지금 시작하기", href: "#features" },
     ctaSecondary: { label: "문서 보기", href: "https://github.com" },
   },

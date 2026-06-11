@@ -45,7 +45,14 @@ export function HeroSection({
             <Link href={ctaPrimary.href}>{ctaPrimary.label}</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href={ctaSecondary.href}>{ctaSecondary.label}</Link>
+            <Link
+              href={ctaSecondary.href}
+              {...(ctaSecondary.href.startsWith("http")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
+              {ctaSecondary.label}
+            </Link>
           </Button>
         </div>
       </div>

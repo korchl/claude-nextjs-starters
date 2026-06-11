@@ -1,7 +1,7 @@
 "use client"
 
 import { useBoolean } from "usehooks-ts"
-import { Menu, X } from "lucide-react"
+import { Menu } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -13,10 +13,10 @@ interface MobileMenuProps {
 // 모바일 뷰에서 Sheet 기반 햄버거 메뉴
 // useBoolean()로 Sheet 열림/닫힘 상태 관리
 export function MobileMenu({ nav }: MobileMenuProps) {
-  const { value: open, setFalse: close } = useBoolean(false)
+  const { value: open, setTrue: openMenu, setFalse: close } = useBoolean(false)
 
   return (
-    <Sheet open={open} onOpenChange={(newOpen) => newOpen ? null : close()}>
+    <Sheet open={open} onOpenChange={(newOpen) => (newOpen ? openMenu() : close())}>
       <SheetTrigger asChild>
         <Button variant="ghost" size="icon" className="md:hidden">
           <Menu className="size-5" />

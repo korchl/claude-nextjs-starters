@@ -27,8 +27,6 @@ import {
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
 } from "@/components/ui/pagination"
 import { Button } from "@/components/ui/button"
 import { EmptyState } from "@/components/shared/empty-state"
@@ -158,12 +156,12 @@ export function DataTable<TData, TValue>({
 
       <div className="flex items-center justify-between">
         <div className="text-sm text-muted-foreground">
-          {table.getState().pagination.pageIndex * pageSize + 1} ~{" "}
-          {Math.min(
-            (table.getState().pagination.pageIndex + 1) * pageSize,
-            rows.length + table.getState().pagination.pageIndex * pageSize
-          )}{" "}
-          / 총 {data.length}개
+          {(() => {
+            const totalFiltered = table.getFilteredRowModel().rows.length
+            const pageIndex = table.getState().pagination.pageIndex
+            if (totalFiltered === 0) return "총 0개"
+            return `${pageIndex * pageSize + 1} ~ ${Math.min((pageIndex + 1) * pageSize, totalFiltered)} / 총 ${totalFiltered}개`
+          })()}
         </div>
         <Pagination>
           <PaginationContent>
@@ -178,21 +176,43 @@ export function DataTable<TData, TValue>({
               </Button>
             </PaginationItem>
 
-            {Array.from({
-              length: table.getPageCount(),
-            }).map((_, i) => (
-              <PaginationItem key={i}>
-                <PaginationLink
-                  isActive={
-                    table.getState().pagination.pageIndex === i
-                  }
-                  onClick={() => table.setPageIndex(i)}
-                  href="#"
-                >
-                  {i + 1}
-                </PaginationLink>
-              </PaginationItem>
-            ))}
+            {(() => {
+              const currentPage = table.getState().pagination.pageIndex
+              const pageCount = table.getPageCount()
+              const pages: (number | "ellipsis")[] = []
+
+              for (let i = 0; i < pageCount; i++) {
+                if (
+                  i === 0 ||
+                  i === pageCount - 1 ||
+                  (i >= currentPage - 1 && i <= currentPage + 1)
+                ) {
+                  pages.push(i)
+                } else if (
+                  pages[pages.length - 1] !== "ellipsis"
+                ) {
+                  pages.push("ellipsis")
+                }
+              }
+
+              return pages.map((page, idx) =>
+                page === "ellipsis" ? (
+                  <PaginationItem key={`ellipsis-${idx}`}>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                ) : (
+                  <PaginationItem key={page}>
+                    <PaginationLink
+                      isActive={currentPage === page}
+                      onClick={() => table.setPageIndex(page)}
+                      href="#"
+                    >
+                      {page + 1}
+                    </PaginationLink>
+                  </PaginationItem>
+                )
+              )
+            })()}
 
             <PaginationItem>
               <Button

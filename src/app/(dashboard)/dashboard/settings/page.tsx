@@ -17,7 +17,6 @@ export default function SettingsPage() {
     name: "홍길동",
     email: "hong@example.com",
     notifications: true,
-    darkMode: false,
     newsletter: true,
   })
 

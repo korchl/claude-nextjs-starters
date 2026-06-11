@@ -50,10 +50,10 @@ export function FeaturesSection({ features }: FeaturesSectionProps) {
 
         {/* 기능 카드 그리드 */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => {
+          {features.map((feature) => {
             const Icon = iconMap[feature.icon]
             return (
-              <Link key={index} href={feature.href}>
+              <Link key={feature.href} href={feature.href}>
                 <Card className="cursor-pointer transition-all hover:shadow-lg">
                   <CardHeader>
                     <div className="mb-4">

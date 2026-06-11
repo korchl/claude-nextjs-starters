@@ -1,6 +1,5 @@
 "use client"
 
-import { useLocalStorage } from "usehooks-ts"
 import {
   Sidebar,
   SidebarContent,
@@ -15,10 +14,7 @@ import { Home, BarChart3, Settings, LogOut, House } from "lucide-react"
 import Link from "next/link"
 
 // ShadcnUI Sidebar 기반 애플리케이션 사이드바
-// useLocalStorage()로 접힘 상태 유지
 export function AppSidebar() {
-  const [collapsed, setCollapsed] = useLocalStorage("sidebar-collapsed", false)
-
   const navItems = [
     { icon: House, label: "홈", href: "/" },
     { icon: Home, label: "대시보드", href: "/dashboard" },
